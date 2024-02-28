@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sudoku Solver</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="sudoku-container">
+  <!-- Create the Sudoku grid using input fields -->
+  <!-- Dynamically generated grid will be inserted here -->
+</div>
+
+<div class="button-container">
+  <button onclick="solveSudoku()">Solve Sudoku</button>
+</div>
+
+<script src="script.js"></script>
+<script>
+// Generate Sudoku grid dynamically
+const sudokuContainer = document.querySelector('.sudoku-container');
+for (let i = 0; i < 9; i++) {
+  const rowDiv = document.createElement('div');
+  rowDiv.classList.add('row');
+  for (let j = 0; j < 9; j++) {
+    const input = document.createElement('input');
+    input.classList.add('cell');
+    input.setAttribute('id', `cell-${i}-${j}`);
+    input.setAttribute('maxlength', '1');
+    rowDiv.appendChild(input);
+  }
+  sudokuContainer.appendChild(rowDiv);
+}
+</script>
+
+</body>
+</html>
